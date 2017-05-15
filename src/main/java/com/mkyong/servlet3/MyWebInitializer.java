@@ -1,4 +1,4 @@
-package com.mkyong.servlet3;
+/*package com.mkyong.servlet3;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -22,4 +22,4 @@ public class MyWebInitializer extends
 		return null;
 	}
 
-}
+}*/
