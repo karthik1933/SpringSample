@@ -7,6 +7,8 @@ import com.concretepage.entity.Person;
 public interface IPersonService {
 
 	List<?> getAllPersons();
+	
+	List<?> newDistrictWiseVillagesDetails();
 
 	Person getPersonById(int pid);
 

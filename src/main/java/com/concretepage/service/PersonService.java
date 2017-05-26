@@ -39,4 +39,12 @@ public class PersonService implements IPersonService {
 	public void deletePerson(int pid) {
 		personDAO.deletePerson(pid);
 	}
+
+	@Override
+	public List<?> newDistrictWiseVillagesDetails() {
+		System.out.println("enter into service");
+		List<?> a=personDAO.newDistrictWiseVillagesDetails();
+		
+		return a;
+	}
 }

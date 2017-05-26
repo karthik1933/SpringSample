@@ -3,8 +3,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head><title>Spring 4 MVC + Hibernate</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/app-resources/css/style.css"/>
 </head>
 <body>
+<%-- <form:form id="loginform" action="login" method="POST" modelAttribute="loginForm">
+	<form:input  path="username"/><form:errors path="username" cssClass="error-msg"/>
+	<form:input  path="password"/><form:errors path="password" cssClass="error-msg"/>
+	<input type="button" value="Add" id="btn-add">
+</form:form> --%>
   <form:form  id="myform" action="addPerson" method="POST" commandName="person">
        <h3> <c:if test="${person.pid==0}">
 			         Add New Person
@@ -13,7 +19,7 @@
 			         Update Person for Id: <c:out value="${person.pid}"/>
 					 <form:hidden path="pid"/>
 	        </c:if>
-       </h3>
+       </h3> <a href="${pageContext.request.contextPath}/newDistrictsVillagesReport">NewDistrictsVillagesReport</a>
 	  <table>
 	    <tr> <td>User Name:</td> <td><form:input  path="username"/><form:errors path="username" cssClass="error-msg"/> </td> </tr>
 	    <tr> <td>Password:</td> <td><form:password path="password"/><form:errors path="password" cssClass="error-msg"/> </td> </tr>
@@ -63,7 +69,5 @@
   </form:form>
   <script src="${pageContext.request.contextPath}/app-resources/js/lib/jquery-2.2.3.min.js"></script>
   <script src="${pageContext.request.contextPath}/app-resources/js/myapp.js"></script>
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/app-resources/css/style.css"/>
-  
 </body>
 </html>

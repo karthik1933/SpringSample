@@ -28,11 +28,18 @@ public class PersonController {
 
 	@Autowired
 	private LocaleResolver localeResolver;
-
+	
 	@RequestMapping(value = "personform")
 	public ModelAndView user() {
 		ModelAndView mv = new ModelAndView("personform", "person", new Person());
 		setPageData(mv.getModelMap());
+		return mv;
+	}
+	@RequestMapping(value = "newDistrictsVillagesReport")
+	public ModelAndView newDistrictsVillagesReport(ModelMap model) {
+		System.out.println("enter into controller");
+		model.addAttribute("allData", personService.newDistrictWiseVillagesDetails());
+		ModelAndView mv = new ModelAndView("newDistrictsVillagesReport");
 		return mv;
 	}
 
@@ -82,7 +89,6 @@ public class PersonController {
 		setPageData(model);
 		return "personform";
 	}
-
 	private void setPageData(ModelMap model) {
 		model.addAttribute("allData", personService.getAllPersons());
 		model.addAttribute("genderOptions", Person.getGenderOptions());
@@ -92,4 +98,5 @@ public class PersonController {
 	private String getMsg(String key, HttpServletRequest request) {
 		return messageSource.getMessage(key, null, localeResolver.resolveLocale(request));
 	}
+	
 }

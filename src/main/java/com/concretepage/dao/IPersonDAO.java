@@ -7,6 +7,7 @@ import com.concretepage.entity.Person;
 public interface IPersonDAO {
 
 	List<?> getAllPersons();
+	List<?> newDistrictWiseVillagesDetails();
 
 	Person getPersonById(int pid);
 

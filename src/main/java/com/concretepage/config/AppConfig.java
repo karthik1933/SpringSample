@@ -22,6 +22,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Import(DBConfig.class)
 @EnableWebMvc   
 public class AppConfig extends WebMvcConfigurerAdapter  {   
+	
     @Bean  
     public InternalResourceViewResolver viewResolver() {  
 	    InternalResourceViewResolver resolver = new InternalResourceViewResolver();  
